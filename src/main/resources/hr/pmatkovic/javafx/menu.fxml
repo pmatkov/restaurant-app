@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="23.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hr.pmatkovic.javafx.MenuController">
+    <children>
+      <MenuBar prefHeight="25.0" prefWidth="850.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                  <menus>
+                      <Menu mnemonicParsing="false" text="Employees">
+                          <items>
+                              <MenuItem mnemonicParsing="false" onAction="#displayEmployees" text="Directory" />
+                  <MenuItem mnemonicParsing="false" onAction="#displayEmployeesHistory" text="History" />
+                          </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="Performance review">
+                          <items>
+                              <MenuItem mnemonicParsing="false" onAction="#displayPerformanceReview" text="Directory" />
+                  <MenuItem mnemonicParsing="false" onAction="#displayPerformanceHistory" text="History" />
+                          </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="Inventory">
+                          <items>
+                              <MenuItem mnemonicParsing="false" onAction="#displayInventory" text="Directory" />
+                  <MenuItem mnemonicParsing="false" onAction="#displayInventoryHistory" text="History" />
+                          </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="Reservations">
+                          <items>
+                              <MenuItem mnemonicParsing="false" onAction="#displayReservations" text="Directory" />
+                  <MenuItem mnemonicParsing="false" onAction="#displayReservationsHistory" text="History" />
+                          </items>
+                      </Menu>
+                  </menus>
+              </MenuBar>
+        </children>
+    </AnchorPane>

@@ -1,0 +1,22 @@
+.tooltip {
+    -fx-background: rgba(30,30,30);
+    -fx-text-fill: black;
+    -fx-background-color: white;
+    -fx-background-radius: 6px;
+    -fx-background-insets: 0;
+    -fx-padding: 0.667em 0.75em 0.667em 0.75em; /* 10px */
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.5) , 10, 0.0 , 0 , 3 );
+    -fx-font-size: 1em;
+}
+
+.original-text {
+    -fx-fill: red;
+}
+
+.combo-box .arrow-button .arrow {
+    -fx-background-radius: 0;
+    -fx-background-insets: 0 0 0 0, 0, 1, 1;
+    -fx-padding: 0.2em 0.2em 0.2em 0.2em;
+    -fx-shape: "M0,0 V8 L4,4 Z";
+    -fx-background-color: derive(-fx-base,-30%);
+}

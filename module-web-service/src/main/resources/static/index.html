@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta chaset="utf-8"/>
+        <link rel="stylesheet" type="text/css" href="style.css">      
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Poller+One&display=swap" rel="stylesheet">
+        <title>Arcadia</title>
+    </head>
+    <body>
+        <header>
+            <h1>Arcadia restaurant</h1>
+        </header>
+        <main>
+            <article>
+                <div class="image">
+                    <img src="table.png">
+                </div>
+
+                <div class="reservation">
+                    <h2>Reservation</h2>
+                    <form id="form">
+                        <label for="name">First Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter first name" required>
+                        <label for="surname">Last Name</label>
+                        <input type="text" id="surname" name="surname" placeholder="Enter last name" required>
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" placeholder="Enter e-mail" required>
+                        <label for="guests">Number of guests</label>
+                        <select id="guests" name="guests" required>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                        </select>
+                        <label for="datetime">Date and time</label>
+                        <input type="datetime-local" id="datetime" name="datetime" value="2024-02-01T12:00"  min="2023-01-01T12:00" max="2024-06-01T12:00" required>
+                        <input type="reset" value="Reset">
+                        <input type="submit" value="Submit">
+                      </form>
+                </div>
+                <div id="message">
+                    <p>Reservation submitted</p>
+                </div>
+            </article>
+
+        </main>
+        <footer>
+            <p>Arcadia - 8-10 Brewer Street - New York</p>
+        </footer>
+        <script src="script.js"></script>
+    </body>
+
+</html>

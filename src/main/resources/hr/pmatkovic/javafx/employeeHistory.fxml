@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<GridPane prefHeight="650.0" prefWidth="850.0" vgap="10.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hr.pmatkovic.javafx.EmployeeHistoryController">
+    <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="80.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="90.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="115.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="115.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="115.0" />
+        <ColumnConstraints />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+    </rowConstraints>
+    <children>
+        <fx:include source="menu.fxml" GridPane.valignment="TOP" />
+        <fx:include source="loginLabel.fxml" GridPane.columnIndex="3" GridPane.valignment="TOP" />
+        <TableView fx:id="employeesHistoryTableView" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="5" GridPane.rowIndex="2" GridPane.rowSpan="3">
+            <columns>
+                <TableColumn fx:id="employeePinTableColumn" text="PIN" />
+                <TableColumn fx:id="employeeNameTableColumn" text="Name" />
+                <TableColumn fx:id="employeeSurnameTableColumn" text="Surname" />
+                <TableColumn fx:id="employeeBirthdateTableColumn" prefWidth="90.0" text="Birthdate" />
+                <TableColumn fx:id="employeePositionTableColumn" prefWidth="90.0" text="Position" />
+                <TableColumn fx:id="employeeRankTableColumn" prefWidth="90.0" text="Rank" />
+                <TableColumn fx:id="changeTypeTableColumn" minWidth="80.0" prefWidth="90.0" text="Change type" />
+                <TableColumn fx:id="changedByTableColumn" minWidth="80.0" prefWidth="100.0" text="Changed by" />
+                <TableColumn fx:id="timeOfChangeTableColumn" prefWidth="140.0" text="Time of change" />
+            </columns>
+        </TableView>
+        <Label layoutX="10.0" layoutY="125.0" text="Employees history">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+            <GridPane.margin>
+                <Insets />
+            </GridPane.margin>
+            <padding>
+                <Insets left="10.0" top="15.0" />
+            </padding>
+        </Label>
+        <Label text="PIN:" GridPane.rowIndex="1" GridPane.valignment="TOP">
+            <GridPane.margin>
+                <Insets />
+            </GridPane.margin>
+            <padding>
+                <Insets left="10.0" top="5.0" />
+            </padding>
+        </Label>
+        <Label layoutX="10.0" layoutY="125.0" text="Name:" GridPane.rowIndex="1">
+            <GridPane.margin>
+                <Insets />
+            </GridPane.margin>
+            <padding>
+                <Insets left="10.0" />
+            </padding>
+        </Label>
+        <Label layoutX="10.0" layoutY="43.0" text="Surname:" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+            <padding>
+                <Insets bottom="5.0" left="10.0" />
+            </padding>
+            <GridPane.margin>
+                <Insets />
+            </GridPane.margin>
+        </Label>
+        <Label layoutX="20.0" layoutY="97.0" text="Birthdate:" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="TOP">
+            <padding>
+                <Insets left="10.0" top="5.0" />
+            </padding>
+            <GridPane.margin>
+                <Insets />
+            </GridPane.margin>
+        </Label>
+        <Label layoutX="10.0" layoutY="43.0" text="Position:" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1">
+            <padding>
+                <Insets left="10.0" />
+            </padding>
+        </Label>
+        <Label layoutX="210.0" layoutY="125.0" text="Rank:" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+            <padding>
+                <Insets left="10.0" />
+            </padding>
+        </Label>
+        <TextField fx:id="employeePinTextField" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="TOP">
+            <GridPane.margin>
+                <Insets left="85.0" right="5.0" />
+            </GridPane.margin>
+        </TextField>
+        <TextField fx:id="employeeNameTextField" layoutX="90.0" layoutY="97.0" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+            <GridPane.margin>
+                <Insets left="85.0" right="5.0" />
+            </GridPane.margin>
+        </TextField>
+        <TextField fx:id="employeeSurnameTextField" layoutX="10.0" layoutY="39.0" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+            <GridPane.margin>
+                <Insets left="85.0" right="5.0" />
+            </GridPane.margin>
+        </TextField>
+        <DatePicker fx:id="employeeBirthdateDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="TOP">
+            <GridPane.margin>
+                <Insets left="85.0" right="5.0" />
+            </GridPane.margin></DatePicker>
+        <ComboBox fx:id="positionComboBox" prefWidth="150.0" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+            <GridPane.margin>
+                <Insets left="85.0" right="5.0" />
+            </GridPane.margin>
+        </ComboBox>
+        <ComboBox fx:id="rankComboBox" prefWidth="150.0" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+            <GridPane.margin>
+                <Insets left="85.0" right="5.0" />
+            </GridPane.margin>
+        </ComboBox>
+        <Label layoutX="10.0" layoutY="92.0" text="Change type:" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.valignment="TOP">
+            <padding>
+                <Insets left="10.0" top="5.0" />
+            </padding>
+        </Label>
+        <Label layoutX="10.0" layoutY="125.0" text="Changed by:" GridPane.columnIndex="2" GridPane.rowIndex="1">
+            <padding>
+                <Insets left="10.0" />
+            </padding>
+        </Label>
+        <Label layoutX="10.0" layoutY="152.0" text="Time chng:" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+            <padding>
+                <Insets bottom="5.0" left="10.0" />
+            </padding>
+        </Label>
+        <TextField fx:id="changeTypeTextField" layoutX="90.0" layoutY="92.0" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.valignment="TOP">
+            <GridPane.margin>
+                <Insets left="85.0" right="5.0" />
+            </GridPane.margin>
+        </TextField>
+        <TextField fx:id="changedByTextField" layoutX="90.0" layoutY="121.0" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+            <GridPane.margin>
+                <Insets left="85.0" right="5.0" />
+            </GridPane.margin>
+        </TextField>
+        <Button mnemonicParsing="false" text="Find" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+            <GridPane.margin>
+                <Insets left="5.0" />
+            </GridPane.margin>
+        </Button>
+      <DatePicker fx:id="timeOfChangeDatePicker" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+         <GridPane.margin>
+            <Insets left="85.0" right="5.0" />
+         </GridPane.margin>
+      </DatePicker>
+        <GridPane fx:id="historyFieldsGridPane" prefHeight="70.0" prefWidth="850.0" GridPane.columnSpan="5" GridPane.rowIndex="5">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="80.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="80.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="80.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="80.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="80.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="80.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="80.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="80.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="80.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="80.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="80.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="39.0" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="39.0" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <TextField fx:id="pinCurrentTextField" editable="false" promptText="PIN">
+                    <GridPane.margin>
+                        <Insets left="2.0" right="2.0" />
+                    </GridPane.margin>
+                </TextField>
+                <TextField fx:id="nameCurrentTextField" editable="false" promptText="Name" GridPane.columnIndex="1">
+                    <GridPane.margin>
+                        <Insets left="2.0" right="2.0" />
+                    </GridPane.margin>
+                </TextField>
+                <TextField fx:id="surnameCurrentTextField" editable="false" promptText="Surname" GridPane.columnIndex="2">
+                    <GridPane.margin>
+                        <Insets left="2.0" right="2.0" />
+                    </GridPane.margin>
+                </TextField>
+                <TextField fx:id="salaryCurrentTextField" editable="false" promptText="Salary" GridPane.columnIndex="6">
+                    <GridPane.margin>
+                        <Insets left="2.0" right="2.0" />
+                    </GridPane.margin>
+                </TextField>
+                <TextField fx:id="experienceCurrentTextField" editable="false" promptText="Experience" GridPane.columnIndex="9">
+                    <GridPane.margin>
+                        <Insets left="2.0" right="2.0" />
+                    </GridPane.margin>
+                </TextField>
+                <TextField fx:id="bonusCurrentTextField" editable="false" promptText="Bonus" GridPane.columnIndex="7">
+                    <GridPane.margin>
+                        <Insets left="2.0" right="2.0" />
+                    </GridPane.margin>
+                </TextField>
+                <TextField fx:id="performanceCurrentTextField" editable="false" layoutX="600.0" layoutY="15.0" promptText="Performance" GridPane.columnIndex="8">
+               <GridPane.margin>
+                  <Insets left="2.0" right="2.0" />
+               </GridPane.margin></TextField>
+            <Label text="New values" GridPane.columnIndex="10">
+               <GridPane.margin>
+                  <Insets left="5.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="Old values" GridPane.columnIndex="10" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="5.0" />
+               </GridPane.margin>
+            </Label>
+            <TextField fx:id="pinOldTextField" editable="false" layoutX="12.0" layoutY="17.0" promptText="PIN" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="2.0" right="2.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="nameOldTextField" editable="false" layoutX="89.0" layoutY="17.0" promptText="Name" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="2.0" right="2.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="surnameOldTextField" editable="false" layoutX="166.0" layoutY="17.0" promptText="Surname" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="2.0" right="2.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="salaryOldTextField" editable="false" promptText="Salary" GridPane.columnIndex="6" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="2.0" right="2.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="bonusOldTextField" editable="false" promptText="Bonus" GridPane.columnIndex="7" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="2.0" right="2.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="performanceOldTextField" editable="false" promptText="Performance" GridPane.columnIndex="8" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="2.0" right="2.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="experienceOldTextField" editable="false" promptText="Experience" GridPane.columnIndex="9" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="2.0" right="2.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="positionCurrentTextField" editable="false" promptText="Position" GridPane.columnIndex="4">
+               <GridPane.margin>
+                  <Insets left="2.0" right="2.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="birthdateCurrentTextField" editable="false" promptText="Birthdate" GridPane.columnIndex="3">
+               <GridPane.margin>
+                  <Insets left="2.0" right="2.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="rankCurrentTextField" editable="false" promptText="Rank" GridPane.columnIndex="5">
+               <GridPane.margin>
+                  <Insets left="2.0" right="2.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="positionOldTextField" editable="false" promptText="Position" GridPane.columnIndex="4" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="2.0" right="2.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="rankOldTextField" editable="false" promptText="Rank" GridPane.columnIndex="5" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="2.0" right="2.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="birthdateOldTextField" editable="false" promptText="Birthdate" GridPane.columnIndex="3" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="2.0" right="2.0" />
+               </GridPane.margin>
+            </TextField>
+            </children>
+         <GridPane.margin>
+            <Insets left="5.0" right="5.0" />
+         </GridPane.margin>
+        </GridPane>
+    </children>
+</GridPane>

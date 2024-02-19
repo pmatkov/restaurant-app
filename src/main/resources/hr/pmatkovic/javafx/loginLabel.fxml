@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hr.pmatkovic.javafx.LoginLabelController">
+   <children>
+        <Label layoutX="5.0" layoutY="5.0" text="Logged in as:" />
+      <Label fx:id="loginLabel" layoutX="86.0" layoutY="5.0" prefWidth="75.0">
+          <font>
+              <Font name="System Bold" size="12.0" />
+          </font>
+      </Label>
+      <Label fx:id="logutLabel" layoutX="186.0" layoutY="5.0" onMouseClicked="#logout" text="Logout" AnchorPane.leftAnchor="170.0" />
+   </children>
+</AnchorPane>

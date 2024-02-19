@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <appender name="defaultFileAppender" class="ch.qos.logback.core.FileAppender">
+        <file>logs/default.log</file>
+        <encoder>
+            <pattern>%date %level [%thread] %logger{10} [%file:%line] %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="databaseFileAppender" class="ch.qos.logback.core.FileAppender">
+        <file>logs/database.log</file>
+        <encoder>
+            <pattern>%date %level [%thread] %logger{10} [%file:%line] %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="authenticationFileAppender" class="ch.qos.logback.core.FileAppender">
+        <file>logs/authentication.log</file>
+        <encoder>
+            <pattern>%date %level [%thread] %logger{10} [%file:%line] %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="defLogger" level="DEBUG" additivity="false">
+        <appender-ref ref="defaultFileAppender" />
+    </logger>
+
+    <logger name="dbLogger" level="INFO" additivity="true">
+        <appender-ref ref="databaseFileAppender" />
+    </logger>
+
+    <logger name="authLogger" level="INFO" additivity="true">
+        <appender-ref ref="authenticationFileAppender" />
+    </logger>
+
+    <root level="ERROR">
+        <appender-ref ref="defaultFileAppender" />
+    </root>
+</configuration>
+

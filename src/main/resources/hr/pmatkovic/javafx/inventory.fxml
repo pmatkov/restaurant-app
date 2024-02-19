@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<GridPane prefHeight="650.0" prefWidth="850.0" vgap="10.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hr.pmatkovic.javafx.InventoryController">
+    <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="80.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="80.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="80.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="140.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="140.0" />
+        <ColumnConstraints />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+    </rowConstraints>
+    <children>
+        <fx:include source="menu.fxml" GridPane.valignment="TOP" />
+        <fx:include source="loginLabel.fxml" GridPane.columnIndex="3" GridPane.valignment="TOP" />
+        <TableView fx:id="inventoryTableView" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="5" GridPane.rowIndex="2" GridPane.rowSpan="3">
+            <columns>
+                <TableColumn fx:id="nameTableColumn" prefWidth="120.0" text="Name" />
+                <TableColumn fx:id="categoryTableColumn" prefWidth="120.0" text="Category" />
+                <TableColumn fx:id="quantityTableColumn" prefWidth="110.0" text="Quantity" />
+                <TableColumn fx:id="pricePerItemTableColumn" prefWidth="110.0" text="Price per item" />
+                <TableColumn fx:id="bestBeforeTableColumn" prefWidth="110.0" text="Best before" />
+                <TableColumn fx:id="purchaseDateTableColumn" prefWidth="120.0" text="Purchase date" />
+            <TableColumn fx:id="expiryDateTableColumn" prefWidth="120.0" text="Expiry date" />
+            </columns>
+        </TableView>
+        <Label layoutX="10.0" layoutY="125.0" text="Find inventory item">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+            <GridPane.margin>
+                <Insets />
+            </GridPane.margin>
+            <padding>
+                <Insets left="10.0" top="15.0" />
+            </padding>
+        </Label>
+        <Label text="Name:" GridPane.rowIndex="1" GridPane.valignment="TOP">
+            <GridPane.margin>
+                <Insets left="10.0" top="5.0" />
+            </GridPane.margin>
+        </Label>
+        <Label layoutX="10.0" layoutY="125.0" text="Category:" GridPane.rowIndex="1">
+            <GridPane.margin>
+                <Insets left="10.0" />
+            </GridPane.margin>
+        </Label>
+        <Label layoutX="10.0" layoutY="43.0" text="Quantity:" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+            <GridPane.margin>
+                <Insets bottom="5.0" left="10.0" />
+            </GridPane.margin>
+        </Label>
+        <Label layoutX="20.0" layoutY="97.0" text="Price per item:" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="TOP">
+            <GridPane.margin>
+                <Insets left="10.0" top="5.0" />
+            </GridPane.margin>
+        </Label>
+        <Label layoutX="10.0" layoutY="43.0" text="Best before:" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets left="10.0" />
+         </GridPane.margin>
+        </Label>
+        <Label layoutX="210.0" layoutY="125.0" text="Purchase date:" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+         <GridPane.margin>
+            <Insets bottom="5.0" left="10.0" />
+         </GridPane.margin>
+        </Label>
+        <TextField fx:id="nameTextField" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="TOP">
+            <GridPane.margin>
+                <Insets left="85.0" right="5.0" />
+            </GridPane.margin>
+        </TextField>
+        <TextField fx:id="quantityTextField" layoutX="10.0" layoutY="39.0" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+            <GridPane.margin>
+                <Insets left="85.0" right="5.0" />
+            </GridPane.margin>
+        </TextField>
+        <ComboBox fx:id="categoryComboBox" prefWidth="150.0" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+            <GridPane.margin>
+                <Insets left="85.0" right="5.0" />
+            </GridPane.margin>
+        </ComboBox>
+        <TextField fx:id="pricePerItemTextField" layoutX="90.0" layoutY="92.0" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="TOP">
+            <GridPane.margin>
+                <Insets left="85.0" right="5.0" />
+            </GridPane.margin>
+        </TextField>
+        <TextField fx:id="bestBeforeTextField" layoutX="90.0" layoutY="121.0" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+            <GridPane.margin>
+                <Insets left="85.0" right="5.0" />
+            </GridPane.margin>
+        </TextField>
+        <Button mnemonicParsing="false" onAction="#filterInventoryItems" text="Find" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+            <GridPane.margin>
+                <Insets right="5.0" />
+            </GridPane.margin>
+        </Button>
+        <GridPane fx:id="inputFieldsGridPane" prefHeight="70.0" prefWidth="850.0" GridPane.columnSpan="5" GridPane.rowIndex="5">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="80.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="80.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="80.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="80.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="80.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints />
+            <ColumnConstraints />
+            <ColumnConstraints />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="39.0" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="39.0" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <TextField fx:id="addNameTextField" promptText="Name">
+                    <GridPane.margin>
+                        <Insets left="2.0" right="2.0" />
+                    </GridPane.margin>
+                </TextField>
+                <TextField fx:id="addQuantityTextField" promptText="Quantity" GridPane.columnIndex="2">
+                    <GridPane.margin>
+                        <Insets left="2.0" right="2.0" />
+                    </GridPane.margin>
+                </TextField>
+                <DatePicker fx:id="addPurchaseDateDatePicker" promptText="Purchase date" GridPane.columnIndex="5">
+                    <GridPane.margin>
+                        <Insets left="2.0" right="2.0" />
+                    </GridPane.margin>
+                </DatePicker>
+                <TextField fx:id="addPricePerItemTextField" promptText="Price per item" GridPane.columnIndex="3">
+                    <GridPane.margin>
+                        <Insets left="2.0" right="2.0" />
+                    </GridPane.margin>
+                </TextField>
+                <Button fx:id="button" onAction="#updateInventoryItem" prefWidth="42.0" text="Add" GridPane.columnIndex="7">
+                    <GridPane.margin>
+                        <Insets left="20.0" />
+                    </GridPane.margin></Button>
+                <Button layoutX="672.0" layoutY="50.0" mnemonicParsing="false" onAction="#deleteInventoryItem" text="Del" GridPane.columnIndex="7" GridPane.halignment="RIGHT">
+                    <GridPane.margin>
+                        <Insets right="5.0" />
+                    </GridPane.margin></Button>
+            <TextField fx:id="addBestBeforeTextField" promptText="Best before" GridPane.columnIndex="4" />
+            <ComboBox fx:id="addCategoryComboBox" prefWidth="150.0" promptText="Category" GridPane.columnIndex="1" />
+            <DatePicker fx:id="addExpiryDateDatePicker" disable="true" editable="false" promptText="Expiiry date" GridPane.columnIndex="6" />
+            <Label fx:id="modelUpdateLabel" prefWidth="150.0" GridPane.columnIndex="6" GridPane.columnSpan="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets right="10.0" />
+               </GridPane.margin>
+            </Label>
+            </children>
+         <GridPane.margin>
+            <Insets left="5.0" right="5.0" />
+         </GridPane.margin>
+        </GridPane>
+      <DatePicker fx:id="purchaseDateDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+         <GridPane.margin>
+            <Insets left="85.0" right="5.0" />
+         </GridPane.margin>
+      </DatePicker>
+      <DatePicker fx:id="expiryDateDatePicker" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.valignment="TOP">
+         <GridPane.margin>
+            <Insets left="85.0" right="5.0" />
+         </GridPane.margin>
+      </DatePicker>
+      <Label text="Expiry date:" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.valignment="TOP">
+         <GridPane.margin>
+            <Insets left="10.0" top="5.0" />
+         </GridPane.margin>
+      </Label>
+      <ListView fx:id="soonToExpireListView" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets left="10.0" right="10.0" />
+         </GridPane.margin>
+      </ListView>
+      <Label text="Soon to expire:" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.valignment="BOTTOM">
+         <GridPane.margin>
+            <Insets left="10.0" />
+         </GridPane.margin>
+      </Label>
+    </children>
+</GridPane>

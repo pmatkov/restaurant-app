@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<GridPane prefHeight="650.0" prefWidth="850.0" vgap="10.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hr.pmatkovic.javafx.PerformanceReviewController">
+    <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="80.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="90.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="115.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="115.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="115.0" />
+        <ColumnConstraints />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+    </rowConstraints>
+    <children>
+        <fx:include source="menu.fxml" GridPane.valignment="TOP" />
+        <fx:include source="loginLabel.fxml" GridPane.columnIndex="3" GridPane.valignment="TOP" />
+        <TableView fx:id="performanceReviewsTableView" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="5" GridPane.rowIndex="2" GridPane.rowSpan="3">
+            <columns>
+                <TableColumn fx:id="employeeTableColumn" text="Employee" />
+                <TableColumn fx:id="employeePositionTableColumn" text="Position" />
+                <TableColumn fx:id="employeeRankTableColumn" text="Rank" />
+                <TableColumn fx:id="attendanceTableColumn" minWidth="80.0" text="Attendance" />
+                <TableColumn fx:id="qualityTableColumn" minWidth="80.0" text="Quality" />
+                <TableColumn fx:id="achievementsTableColumn" minWidth="80.0" text="Achievements" />
+                <TableColumn fx:id="overallTableColumn" minWidth="80.0" prefWidth="70.0" text="Overall" />
+                <TableColumn fx:id="managerTableColumn" prefWidth="90.0" text="Manager" />
+                <TableColumn fx:id="managerPositionTableColumn" prefWidth="90.0" text="Manager position" />
+                <TableColumn fx:id="reviewDateTableColumn" prefWidth="90.0" text="Review date" />
+            </columns>
+        </TableView>
+        <Label layoutX="10.0" layoutY="125.0" text="Find performance review">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+            <GridPane.margin>
+                <Insets />
+            </GridPane.margin>
+            <padding>
+                <Insets left="10.0" top="15.0" />
+            </padding>
+        </Label>
+        <Label text="Employee:" GridPane.rowIndex="1" GridPane.valignment="TOP">
+            <GridPane.margin>
+                <Insets left="10.0" top="5.0" />
+            </GridPane.margin>
+        </Label>
+        <Label layoutX="20.0" layoutY="97.0" text="Manager:" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+            <GridPane.margin>
+                <Insets left="10.0" />
+            </GridPane.margin>
+        </Label>
+        <Label layoutX="210.0" layoutY="125.0" text="Attendance:" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+         <GridPane.margin>
+            <Insets bottom="5.0" left="10.0" />
+         </GridPane.margin>
+        </Label>
+        <Label layoutX="10.0" layoutY="92.0" text="Quality:" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="TOP">
+         <GridPane.margin>
+            <Insets left="10.0" top="5.0" />
+         </GridPane.margin>
+        </Label>
+        <Label layoutX="10.0" layoutY="125.0" text="Achievements:" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets left="10.0" />
+         </GridPane.margin>
+        </Label>
+        <Label layoutX="10.0" layoutY="152.0" text="Review date:" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+         <GridPane.margin>
+            <Insets bottom="5.0" left="10.0" />
+         </GridPane.margin>
+        </Label>
+        <Button mnemonicParsing="false" onAction="#filterPerformanceReviews" text="Find" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+            <GridPane.margin>
+                <Insets left="10.0" right="5.0" />
+            </GridPane.margin>
+        </Button>
+        <GridPane fx:id="inputFieldsGridPane" prefHeight="70.0" prefWidth="850.0" GridPane.columnSpan="5" GridPane.rowIndex="5">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="80.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="80.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="80.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="80.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="80.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="80.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="80.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="80.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="80.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="39.0" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="39.0" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <DatePicker fx:id="editReviewDateDatePicker" promptText="Review date" GridPane.columnIndex="8">
+                    <GridPane.margin>
+                        <Insets left="2.0" right="2.0" />
+                    </GridPane.margin>
+                </DatePicker>
+                <ComboBox fx:id="editEmployeePositionComboBox" disable="true" prefWidth="150.0" promptText="Position" GridPane.columnIndex="1">
+                    <GridPane.margin>
+                        <Insets left="2.0" right="2.0" />
+                    </GridPane.margin>
+                </ComboBox>
+                <ComboBox fx:id="editEmployeeRankComboBox" disable="true" prefWidth="150.0" promptText="Rank" GridPane.columnIndex="2">
+                    <GridPane.margin>
+                        <Insets left="2.0" right="2.0" />
+                    </GridPane.margin>
+                </ComboBox>
+                      <Button fx:id="button" mnemonicParsing="false" onAction="#updatePerformanceReview" prefWidth="42.0" text="Add" GridPane.columnIndex="9">
+                    <GridPane.margin>
+                        <Insets left="10.0" />
+                    </GridPane.margin></Button>
+                <Button layoutX="672.0" layoutY="50.0" mnemonicParsing="false" onAction="#deletePerformanceReview" text="Del" GridPane.columnIndex="9" GridPane.halignment="RIGHT">
+                    <GridPane.margin>
+                        <Insets right="5.0" />
+                    </GridPane.margin></Button>
+            <ComboBox fx:id="editManagerPositionComboBox" disable="true" prefWidth="150.0" promptText="Manager position" GridPane.columnIndex="7" />
+            <ComboBox fx:id="editAttendanceComboBox" prefWidth="150.0" promptText="Attendance" GridPane.columnIndex="3">
+               <GridPane.margin>
+                  <Insets left="2.0" right="2.0" />
+               </GridPane.margin>
+            </ComboBox>
+            <ComboBox fx:id="editQualityComboBox" prefWidth="150.0" promptText="Quality" GridPane.columnIndex="4">
+               <GridPane.margin>
+                  <Insets left="2.0" right="2.0" />
+               </GridPane.margin>
+            </ComboBox>
+            <ComboBox fx:id="editAchievementsComboBox" prefWidth="150.0" promptText="Achievements" GridPane.columnIndex="5">
+               <GridPane.margin>
+                  <Insets left="2.0" right="2.0" />
+               </GridPane.margin>
+            </ComboBox>
+            <ComboBox fx:id="editEmployeeComboBox" prefWidth="150.0" promptText="Employee">
+               <GridPane.margin>
+                  <Insets left="2.0" right="2.0" />
+               </GridPane.margin>
+            </ComboBox>
+            <ComboBox fx:id="editManagerComboBox" layoutX="12.0" layoutY="17.0" prefWidth="150.0" promptText="Manager" GridPane.columnIndex="6">
+               <GridPane.margin>
+                  <Insets left="2.0" right="2.0" />
+               </GridPane.margin>
+            </ComboBox>
+            <Label fx:id="modelUpdateLabel" prefWidth="150.0" GridPane.columnIndex="8" GridPane.columnSpan="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets right="10.0" />
+               </GridPane.margin>
+            </Label>
+            </children>
+        </GridPane>
+      <DatePicker fx:id="reviewDateDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+         <GridPane.margin>
+            <Insets left="85.0" right="5.0" />
+         </GridPane.margin>
+      </DatePicker>
+      <ComboBox fx:id="qualityComboBox" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="TOP">
+         <GridPane.margin>
+            <Insets left="85.0" right="5.0" />
+         </GridPane.margin>
+      </ComboBox>
+      <ComboBox fx:id="attendanceComboBox" prefWidth="150.0" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+         <GridPane.margin>
+            <Insets left="85.0" right="5.0" />
+         </GridPane.margin>
+      </ComboBox>
+      <ComboBox fx:id="achievementsComboBox" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets left="85.0" right="5.0" />
+         </GridPane.margin>
+      </ComboBox>
+      <ComboBox fx:id="managerComboBox" prefWidth="150.0" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets left="85.0" right="5.0" />
+         </GridPane.margin></ComboBox>
+      <ComboBox fx:id="employeeComboBox" layoutX="443.0" layoutY="107.0" prefWidth="150.0" GridPane.rowIndex="1" GridPane.valignment="TOP">
+         <GridPane.margin>
+            <Insets left="85.0" right="5.0" />
+         </GridPane.margin>
+      </ComboBox>
+    </children>
+</GridPane>
